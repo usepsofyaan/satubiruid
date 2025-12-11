@@ -201,7 +201,7 @@ export default function LandingPage() {
           <button
             onClick={() => {
               navigator.clipboard.writeText("123056789876");
-              alert("Rekening Mandiri disalin!");
+              alert("Rekening BSI disalin!");
             }}
             className="mt-2 px-4 py-2 bg-[#5e81a2] hover:bg-[#5e81a2] text-white text-sm rounded-lg transition"
           >

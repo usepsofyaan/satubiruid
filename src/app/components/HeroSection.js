@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-pink-50">
       <div className="text-center">
-        <h1 className="font-playfair text-4xl font-bold text-[#5e81a2] mb-2">Walimatul 'Urs</h1>
+        <h1 className="font-playfair text-4xl font-bold text-[#5e81a2] mb-2">Walimatul &#39;Urs</h1>
 
         <h1 className="font-playfair text-3xl text-[#5e81a2] mb-4">Yunisa & Usep</h1>
 

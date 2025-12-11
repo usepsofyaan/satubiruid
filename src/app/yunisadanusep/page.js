@@ -39,7 +39,7 @@ export default function LandingPage() {
         }}
       >
         <div className="bg-white/10 px-8 py-10 rounded-2xl text-center backdrop-blur-lg border border-[#5e81a2]/60 shadow-lg">
-          <p className="font-playfair text-2xl text-[#5e81a2] mb-2">Walimatul 'Urs</p>
+          <p className="font-playfair text-2xl text-[#5e81a2] mb-2">Walimatul &#39;Urs</p>
 
           <h1 className="font-playfair text-4xl text-[#5e81a2] font-bold mb-4">Yunisa & Usep</h1>
 

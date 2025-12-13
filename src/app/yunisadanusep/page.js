@@ -72,6 +72,37 @@ export default function LandingPage() {
     setLoading(false);
   };
 
+  const getRelativeTime = (dateString) => {
+    const now = new Date();
+    const past = new Date(dateString);
+    const diffMs = now - past;
+
+    const seconds = Math.floor(diffMs / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (seconds < 60) return "baru saja";
+    if (minutes < 60) return `${minutes} menit lalu`;
+    if (hours < 24) return `${hours} jam lalu`;
+    if (days === 1) return "kemarin";
+    if (days < 7) return `${days} hari lalu`;
+
+    return past.toLocaleDateString("id-ID", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  };
+
+  const isNewWish = (dateString) => {
+    const now = new Date();
+    const created = new Date(dateString);
+    const diffMinutes = (now - created) / 1000 / 60;
+
+    return diffMinutes <= 60; // <= 1 jam
+  };
+
   return (
     <>
       {/* SECTION 1 — HERO */}
@@ -283,18 +314,33 @@ export default function LandingPage() {
         </div>
 
         {/* LIST PESAN */}
-        <div className="max-w-2xl mx-auto space-y-4">
-          {wishes.length === 0 && <p className="text-gray-500 font-poppins">Belum ada ucapan</p>}
+        <div className="max-w-2xl mx-auto">
+          {wishes.length === 0 && <p className="text-gray-500 font-poppins text-center">Belum ada ucapan</p>}
 
-          {wishes.map((wish) => (
-            <div key={wish.id} className="bg-blue-50 p-5 rounded-xl text-left shadow-sm">
-              <p className="font-poppins font-semibold text-[#5e81a2]">{wish.name}</p>
+          <div className="max-h-[360px] overflow-y-auto space-y-4 pr-2">
+            {wishes.map((wish) => (
+              <div key={wish.id} className="bg-blue-50 p-5 rounded-xl text-left shadow-sm">
+                {/* Nama, Badge & Waktu */}
+                <div className="flex justify-between items-center mb-1">
+                  <div className="flex items-center gap-2">
+                    <p className="font-poppins font-semibold text-[#5e81a2]">{wish.name}</p>
 
-              <p className="font-poppins text-[#5e81a2] mt-1">{wish.message}</p>
+                    {isNewWish(wish.created_at) && <span className="text-xs bg-[#5e81a2] text-white px-2 py-0.5 rounded-full font-poppins">Baru</span>}
+                  </div>
 
-              <span className="text-sm text-[#5e81a2] italic">{wish.attendance}</span>
-            </div>
-          ))}
+                  <span className="text-xs text-gray-500 font-poppins">{getRelativeTime(wish.created_at)}</span>
+                </div>
+
+                {/* Pesan */}
+                <p className="font-poppins text-[#5e81a2] mt-1">{wish.message}</p>
+
+                {/* Kehadiran */}
+                <span className="text-sm text-[#5e81a2] italic block mt-2">{wish.attendance}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-sm text-gray-500 mt-4 text-center font-poppins">*Scroll untuk melihat ucapan lainnya</p>
         </div>
       </section>
 

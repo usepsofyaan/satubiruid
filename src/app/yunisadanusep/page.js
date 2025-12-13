@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { Instagram, MessageCircle } from "lucide-react";
+import { supabase } from "../lib/supabaseClient";
 
 export default function LandingPage() {
   const targetDate = new Date("2025-12-21T00:00:00").getTime();
@@ -28,6 +29,48 @@ export default function LandingPage() {
 
     return () => clearInterval(timer);
   }, []);
+
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [attendance, setAttendance] = useState("");
+  const [wishes, setWishes] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    fetchWishes();
+  }, []);
+
+  const fetchWishes = async () => {
+    const { data, error } = await supabase.from("wedding_wishes").select("*").order("created_at", { ascending: false });
+
+    if (!error) {
+      setWishes(data);
+    }
+  };
+
+  const handleSubmitWish = async (e) => {
+    e.preventDefault();
+    if (!name || !message || !attendance) return;
+
+    setLoading(true);
+
+    const { error } = await supabase.from("wedding_wishes").insert([
+      {
+        name,
+        message,
+        attendance,
+      },
+    ]);
+
+    if (!error) {
+      setName("");
+      setMessage("");
+      setAttendance("");
+      fetchWishes(); // refresh data
+    }
+
+    setLoading(false);
+  };
 
   return (
     <>
@@ -213,7 +256,49 @@ export default function LandingPage() {
         <p className="font-poppins text-gray-700 text-lg">Syukron. Jazakumullahu Khairan.</p>
       </section>
 
-      {/* SECTION 7 — FOOTER */}
+      {/* SECTION 7 — WEDDING WISH */}
+      <section className="py-20 px-6 bg-white text-center">
+        <h2 className="font-playfair text-3xl text-[#5e81a2] mb-4">Wedding Wish</h2>
+
+        <p className="font-poppins text-gray-600 mb-10">Tuliskan doa dan ucapan terbaik untuk kami</p>
+
+        {/* FORM */}
+        <div className="max-w-xl mx-auto bg-blue-50 p-8 rounded-2xl shadow-sm mb-12">
+          <form onSubmit={handleSubmitWish} className="space-y-5">
+            <input type="text" placeholder="Nama" value={name} onChange={(e) => setName(e.target.value)} className="w-full px-4 py-3 rounded-lg border border-gray-300 font-poppins text-black" required />
+
+            <textarea placeholder="Ucapan & Doa" rows="4" value={message} onChange={(e) => setMessage(e.target.value)} className="w-full px-4 py-3 rounded-lg border border-gray-300 font-poppins text-black" required />
+
+            <select value={attendance} onChange={(e) => setAttendance(e.target.value)} className="w-full px-4 py-3 rounded-lg border border-gray-300 font-poppins text-black" required>
+              <option value="">Konfirmasi Kehadiran</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+              <option value="InsyaAllah Hadir">InsyaAllah Hadir</option>
+            </select>
+
+            <button type="submit" disabled={loading} className="w-full bg-[#5e81a2] hover:bg-[#5e81a2] text-white py-3 rounded-lg font-poppins transition disabled:opacity-60">
+              {loading ? "Mengirim..." : "Kirim Ucapan"}
+            </button>
+          </form>
+        </div>
+
+        {/* LIST PESAN */}
+        <div className="max-w-2xl mx-auto space-y-4">
+          {wishes.length === 0 && <p className="text-gray-500 font-poppins">Belum ada ucapan</p>}
+
+          {wishes.map((wish) => (
+            <div key={wish.id} className="bg-blue-50 p-5 rounded-xl text-left shadow-sm">
+              <p className="font-poppins font-semibold text-[#5e81a2]">{wish.name}</p>
+
+              <p className="font-poppins text-[#5e81a2] mt-1">{wish.message}</p>
+
+              <span className="text-sm text-[#5e81a2] italic">{wish.attendance}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 8 — FOOTER */}
       <footer className="py-12 px-6 bg-[#5e81a2] text-center text-white">
         {/* Text */}
         <p className="font-poppins text-sm mb-6">

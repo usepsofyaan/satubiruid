@@ -44,7 +44,7 @@ export default function HeroSection() {
 
         <h2 className="font-playfair text-xl text-gray-800 mt-1">{loading ? "Memuat..." : namaTamu}</h2>
 
-        <button onClick={() => router.push("/yunisadanusep")} className="mt-6 px-6 py-3 bg-[#5e81a2] text-white rounded-full shadow-md font-poppins hover:bg-blue-50 transition">
+        <button onClick={() => router.push("/yunisadanusep")} className="mt-6 px-6 py-3 bg-[#5e81a2] text-white rounded-full shadow-md font-poppins hover:bg-[#5e81a2] hover:text-white transition">
           Buka Undangan
         </button>
       </div>

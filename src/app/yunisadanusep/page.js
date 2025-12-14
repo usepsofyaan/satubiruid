@@ -186,9 +186,14 @@ export default function LandingPage() {
         <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-10">Dengan memohon Rahmat dan Ridho Allah Subhanahu Wa Ta’ala, kami bermaksud menyelenggarakan Resepsi Pernikahan Putra-putri kami :</p>
 
         {/* Nama Pasangan - Perempuan */}
-        <div className="mb-14">
+        <div className="mb-10">
           <h3 className="font-playfair text-3xl text-[#5e81a2] mb-2">Yunisa, S.Pd</h3>
           <p className="font-poppins text-[#5e81a2] max-w-xl mx-auto text-lg">Putri Bungsu dari Bapak Drs. H. Sirat Yasir, MM & Ibu Hj. Amelia, S.Pd.AUD</p>
+        </div>
+
+        {/* Ampersand */}
+        <div className="my-6">
+          <span className="font-playfair text-6xl md:text-7xl text-[#5e81a2]/70">&</span>
         </div>
 
         {/* Nama Pasangan - Laki-laki */}

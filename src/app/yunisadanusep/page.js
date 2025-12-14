@@ -117,10 +117,13 @@ export default function LandingPage() {
 
           <h1 className="font-playfair text-4xl text-[#5e81a2] font-bold mb-4">Yunisa & Usep</h1>
 
-          <p className="font-poppins text-lg text-[#5e81a2] mb-6">Ahad, 21 Desember 2025</p>
+          <p className="font-poppins text-lg text-[#5e81a2] mb-1">Ahad, 21 Desember 2025</p>
+
+          {/* 🔽 Tanggal Hijriah */}
+          <p className="font-poppins text-sm text-[#5e81a2]/80 mb-6 italic">(1 Rajab 1447 H)</p>
 
           {/* Countdown */}
-          <div className="flex gap-6 text-center font-poppins">
+          <div className="flex gap-8 text-center font-poppins">
             <div>
               <p className="text-3xl text-[#5e81a2] font-bold">{countdown.days}</p>
               <span className="text-sm text-[#5e81a2]">Hari</span>
@@ -157,6 +160,7 @@ export default function LandingPage() {
 
       {/* SECTION 3 — PEMBUKA */}
       <section className="py-20 px-6 bg-white text-center">
+        <p className="font-poppins text-gray-700 mb-8 text-lg">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
         {/* Paragraf Pembuka */}
         <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-10">Dengan memohon Rahmat dan Ridho Allah Subhanahu Wa Ta’ala, kami bermaksud menyelenggarakan Resepsi Pernikahan Putra-putri kami :</p>
 
@@ -175,14 +179,12 @@ export default function LandingPage() {
 
       {/* SECTION 4 — DETAIL ACARA */}
       <section className="py-20 px-6 bg-blue-50 text-center">
-        {/* Salam Pembuka */}
-        <p className="font-poppins text-gray-700 mb-8 text-lg">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
-
         {/* Paragraf Pembuka */}
         <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-8">Yang In Syaa Allah dilaksanakan pada :</p>
 
         {/* Tanggal */}
-        <h3 className="font-playfair text-2xl text-[#5e81a2] mb-6">Ahad, 21 Desember 2025</h3>
+        <h3 className="font-playfair text-2xl text-[#5e81a2] mb-1">Ahad, 21 Desember 2025</h3>
+        <p className="font-poppins text-sm text-[#5e81a2]/80 mb-6 italic">(1 Rajab 1447 H)</p>
 
         {/* Akad Nikah */}
         <div className="mb-6">
@@ -244,20 +246,22 @@ export default function LandingPage() {
       {/* SECTION 6 — WEDDING GIFT */}
       <section className="py-20 px-6 bg-blue-50 text-center">
         {/* Heading */}
-        <h2 className="font-playfair text-3xl text-[#5e81a2] mb-6">Wedding Gift</h2>
+        <h2 className="font-playfair text-3xl text-[#5e81a2] mb-6">Send Gift</h2>
 
         {/* Paragraf Pembuka */}
-        <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-10">Bagi yang ingin memberikan tanda kasih, dapat mengirimkan melalui rekening di bawah ini atau dapat langsung pada acara walimah:</p>
+        <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-10">
+          Tanpa mengurangi rasa hormat, bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan hadiah pernikahan dapat melalui rekening dibawah ini atau dapat langsung pada acara walimah:
+        </p>
 
         {/* Rekening 1 */}
         <div className="bg-white shadow-md rounded-xl p-6 max-w-md mx-auto mb-8 border border-pink-100">
           <p className="font-playfair text-xl text-gray-800 mb-2">Bank BSI</p>
-          <p className="font-poppins text-gray-700 text-lg font-semibold">7200 1234 5678</p>
+          <p className="font-poppins text-gray-700 text-lg font-semibold">7294912996</p>
           <p className="font-poppins text-gray-600 text-sm mt-2 mb-4">a.n. Usep Sofyan</p>
 
           <button
             onClick={() => {
-              navigator.clipboard.writeText("720012345678");
+              navigator.clipboard.writeText("7294912996");
               alert("Rekening BSI disalin!");
             }}
             className="mt-2 px-4 py-2 bg-[#5e81a2] hover:bg-[#5e81a2] text-white text-sm rounded-lg transition"
@@ -274,7 +278,7 @@ export default function LandingPage() {
 
           <button
             onClick={() => {
-              navigator.clipboard.writeText("123056789876");
+              navigator.clipboard.writeText("7152693081");
               alert("Rekening BSI disalin!");
             }}
             className="mt-2 px-4 py-2 bg-[#5e81a2] hover:bg-[#5e81a2] text-white text-sm rounded-lg transition"
@@ -289,7 +293,7 @@ export default function LandingPage() {
 
       {/* SECTION 7 — WEDDING WISH */}
       <section className="py-20 px-6 bg-white text-center">
-        <h2 className="font-playfair text-3xl text-[#5e81a2] mb-4">Wedding Wish</h2>
+        <h2 className="font-playfair text-3xl text-[#5e81a2] mb-4">Wishes and Du&#39;a</h2>
 
         <p className="font-poppins text-gray-600 mb-10">Tuliskan doa dan ucapan terbaik untuk kami</p>
 

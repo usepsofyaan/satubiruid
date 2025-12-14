@@ -38,7 +38,7 @@ export default function HeroSection() {
 
         <h1 className="font-playfair text-3xl text-[#5e81a2] mb-4">Yunisa & Usep</h1>
 
-        <p className="font-poppins text-gray-600">Ahad, 21 Desember 2025</p>
+        <p className="font-poppins text-gray-600">Ahad, 21 Desember 2025 (1 Rajab 1447 H)</p>
 
         <p className="font-poppins text-gray-600 mt-4">Kepada Yth</p>
 

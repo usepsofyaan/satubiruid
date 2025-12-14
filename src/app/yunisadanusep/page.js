@@ -103,6 +103,13 @@ export default function LandingPage() {
     return diffMinutes <= 60; // <= 1 jam
   };
 
+  const googleCalendarUrl =
+    "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=Walimatul+Urs+Yunisa+%26+Usep" +
+    "&dates=20251221T010000Z/20251221T070000Z" +
+    "&details=Undangan+Pernikahan+Yunisa+dan+Usep" +
+    "&location=Jl.+Kamboja+II+No.+14,+Pekanbaru";
+
   return (
     <>
       {/* SECTION 1 — HERO */}
@@ -123,7 +130,7 @@ export default function LandingPage() {
           <p className="font-poppins text-sm text-[#5e81a2]/80 mb-6 italic">(1 Rajab 1447 H)</p>
 
           {/* Countdown */}
-          <div className="flex gap-8 text-center font-poppins">
+          <div className="flex gap-8 text-center font-poppins mb-6">
             <div>
               <p className="text-3xl text-[#5e81a2] font-bold">{countdown.days}</p>
               <span className="text-sm text-[#5e81a2]">Hari</span>
@@ -141,11 +148,25 @@ export default function LandingPage() {
               <span className="text-sm text-[#5e81a2]">Detik</span>
             </div>
           </div>
+
+          <a
+            href={googleCalendarUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full
+             border border-[#5e81a2]/70 text-[#5e81a2]
+             bg-white/10 backdrop-blur-lg
+             hover:bg-[#5e81a2] hover:text-white transition"
+          >
+            Add to Calendar
+          </a>
         </div>
       </div>
 
       {/* SECTION 2 — AYAT SUCI QS AR-RUM 21 */}
       <section className="py-20 px-6 bg-blue-50 text-center">
+        <p className="font-playfair text-2xl md:text-3xl text-[#5e81a2] mb-4 text-center leading-loose">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
         <h2 className="font-playfair text-3xl text-[#5e81a2] mb-6">QS. Ar-Rum Ayat 21</h2>
 
         <p className="font-playfair text-2xl text-gray-700 leading-relaxed mb-8">
@@ -199,7 +220,8 @@ export default function LandingPage() {
         </div>
 
         {/* Alamat */}
-        <p className="font-poppins text-gray-700 max-w-xl mx-auto text-lg leading-relaxed mb-10">Bertempat di Rumah Kediaman kami, Jl. Kamboja II No. 14, Delima, Kec. Binawidya (Panam), Kota Pekanbaru, Riau</p>
+        <p className="font-poppins text-gray-700 max-w-xl mx-auto text-lg leading-relaxed mb-2">Bertempat di Rumah Kediaman kami</p>
+        <p className="font-poppins text-gray-700 max-w-xl mx-auto text-lg leading-relaxed mb-10">Jl. Kamboja II No. 14, Delima, Kec. Binawidya (Panam), Kota Pekanbaru, Riau</p>
 
         {/* Penutup */}
         <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-8">

@@ -6,7 +6,7 @@ import { Instagram, MessageCircle } from "lucide-react";
 import { supabase } from "../lib/supabaseClient";
 
 export default function LandingPage() {
-  const targetDate = new Date("2025-12-21T00:00:00").getTime();
+  const targetDate = new Date("2026-01-04T11:00:00").getTime();
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -120,14 +120,14 @@ export default function LandingPage() {
         }}
       >
         <div className="bg-white/10 px-8 py-10 rounded-2xl text-center backdrop-blur-lg border border-[#5e81a2]/60 shadow-lg">
-          <p className="font-playfair text-2xl text-[#5e81a2] mb-2">Walimatul &#39;Urs</p>
+          <p className="font-playfair text-2xl text-[#5e81a2] mb-2">Ngunduh Mantu</p>
 
-          <h1 className="font-playfair text-4xl text-[#5e81a2] font-bold mb-4">Yunisa & Usep</h1>
+          <h1 className="font-playfair text-4xl text-[#5e81a2] font-bold mb-4">Usep & Yunisa</h1>
 
-          <p className="font-poppins text-lg text-[#5e81a2] mb-1">Ahad, 21 Desember 2025</p>
+          <p className="font-poppins text-lg text-[#5e81a2] mb-1">Ahad, 4 Januari 2026</p>
 
           {/* 🔽 Tanggal Hijriah */}
-          <p className="font-poppins text-sm text-[#5e81a2]/80 mb-6 italic">(1 Rajab 1447 H)</p>
+          <p className="font-poppins text-sm text-[#5e81a2]/80 mb-6 italic">(15 Rajab 1447 H)</p>
 
           {/* Countdown */}
           <div className="flex gap-8 text-center font-poppins mb-6">
@@ -185,21 +185,19 @@ export default function LandingPage() {
         {/* Paragraf Pembuka */}
         <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-10">Dengan memohon Rahmat dan Ridho Allah Subhanahu Wa Ta’ala, kami bermaksud menyelenggarakan Resepsi Pernikahan Putra-putri kami :</p>
 
-        {/* Nama Pasangan - Perempuan */}
-        <div className="mb-10">
-          <h3 className="font-playfair text-3xl text-[#5e81a2] mb-2">Yunisa, S.Pd</h3>
-          <p className="font-poppins text-[#5e81a2] max-w-xl mx-auto text-lg">Putri Bungsu dari Bapak Drs. H. Sirat Yasir, MM & Ibu Hj. Amelia, S.Pd.AUD</p>
-        </div>
-
-        {/* Ampersand */}
-        <div className="my-6">
-          <span className="font-playfair text-6xl md:text-7xl text-[#5e81a2]/70">&</span>
-        </div>
-
         {/* Nama Pasangan - Laki-laki */}
         <div>
           <h3 className="font-playfair text-3xl text-[#5e81a2] mb-2">Usep Sofyan, S.T</h3>
           <p className="font-poppins text-[#5e81a2] max-w-xl mx-auto text-lg">Putra Tunggal dari Bapak Nanang dan Ibu Ai Suryati</p>
+        </div>
+        {/* Ampersand */}
+        <div className="my-6">
+          <span className="font-playfair text-6xl md:text-7xl text-[#5e81a2]/70">&</span>
+        </div>
+        {/* Nama Pasangan - Perempuan */}
+        <div className="mb-10">
+          <h3 className="font-playfair text-3xl text-[#5e81a2] mb-2">Yunisa, S.Pd</h3>
+          <p className="font-poppins text-[#5e81a2] max-w-xl mx-auto text-lg">Putri Bungsu dari Bapak Drs. H. Sirat Yasir, MM & Ibu Hj. Amelia, S.Pd.AUD</p>
         </div>
       </section>
 
@@ -209,24 +207,24 @@ export default function LandingPage() {
         <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-8">Yang In Syaa Allah dilaksanakan pada :</p>
 
         {/* Tanggal */}
-        <h3 className="font-playfair text-2xl text-[#5e81a2] mb-1">Ahad, 21 Desember 2025</h3>
-        <p className="font-poppins text-sm text-[#5e81a2]/80 mb-6 italic">(1 Rajab 1447 H)</p>
+        <h3 className="font-playfair text-2xl text-[#5e81a2] mb-1">Minggu, 4 Januari 2026</h3>
+        <p className="font-poppins text-sm text-[#5e81a2]/80 mb-6 italic">(15 Rajab 1447 H)</p>
 
         {/* Akad Nikah */}
         <div className="mb-6">
           <p className="font-playfair text-xl text-gray-800">Akad Nikah</p>
-          <p className="font-poppins text-gray-600">Jam 08.00 s.d selesai</p>
+          <p className="font-poppins text-gray-600">Pekanbaru, 21 Desember 2025</p>
         </div>
 
         {/* Resepsi */}
         <div className="mb-10">
-          <p className="font-playfair text-xl text-gray-800">Resepsi</p>
-          <p className="font-poppins text-gray-600">Jam 12.20 s.d 15.00</p>
+          <p className="font-playfair text-xl text-gray-800">Resepsi (Ngunduh Mantu)</p>
+          <p className="font-poppins text-gray-600">Jam 11.00 s.d selesai</p>
         </div>
 
         {/* Alamat */}
         <p className="font-poppins text-gray-700 max-w-xl mx-auto text-lg leading-relaxed mb-2">Bertempat di Rumah Kediaman kami</p>
-        <p className="font-poppins text-gray-700 max-w-xl mx-auto text-lg leading-relaxed mb-10">Jl. Kamboja II No. 14, Delima, Kec. Binawidya (Panam), Kota Pekanbaru, Riau</p>
+        <p className="font-poppins text-gray-700 max-w-xl mx-auto text-lg leading-relaxed mb-10">Jlr 6 Poros RT 006 RW 002 Desa Sencano Jaya Kec. Batang Peranap, Kab. Inhu, Riau</p>
 
         {/* Penutup */}
         <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-8">
@@ -237,41 +235,8 @@ export default function LandingPage() {
         <p className="font-poppins text-gray-700 text-lg">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
       </section>
 
-      {/* SECTION 5 — ADAB WALIMAH */}
-      <section className="py-20 px-6 bg-white text-center">
-        {/* Heading */}
-        <h2 className="font-playfair text-3xl text-[#5e81a2] mb-6">Adab Walimah</h2>
-
-        {/* Paragraf Pembuka */}
-        <p className="font-poppins text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed mb-10">Tanpa mengurangi rasa hormat kami, ada hal-hal dalam adab seorang muslim ketika menghadiri walimah yang harus diperhatikan:</p>
-
-        {/* Poin-poin Adab */}
-        <ul className="text-left max-w-xl mx-auto space-y-4 text-gray-800 font-poppins">
-          <li className="flex items-start">
-            <span className="font-bold mr-2">•</span>
-            Memakai pakaian yang sopan dan menutup aurat.
-          </li>
-          <li className="flex items-start">
-            <span className="font-bold mr-2">•</span>
-            Tamu Ikhwan dan Akhwat dipisah.
-          </li>
-          <li className="flex items-start">
-            <span className="font-bold mr-2">•</span>
-            Tidak berjabat tangan dengan non-mahram.
-          </li>
-          <li className="flex items-start">
-            <span className="font-bold mr-2">•</span>
-            Memperhatikan waktu sholat.
-          </li>
-          <li className="flex items-start">
-            <span className="font-bold mr-2">•</span>
-            Dilarang memotret kedua mempelai.
-          </li>
-        </ul>
-      </section>
-
       {/* SECTION 6 — WEDDING GIFT */}
-      <section className="py-20 px-6 bg-blue-50 text-center">
+      <section className="py-20 px-6 bg-white text-center">
         {/* Heading */}
         <h2 className="font-playfair text-3xl text-[#5e81a2] mb-6">Send Gift</h2>
 
@@ -319,7 +284,7 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 7 — WEDDING WISH */}
-      <section className="py-20 px-6 bg-white text-center">
+      <section className="py-20 px-6 bg-blue-50 text-center">
         <h2 className="font-playfair text-3xl text-[#5e81a2] mb-4">Wishes and Du&#39;a</h2>
 
         <p className="font-poppins text-gray-600 mb-10">Tuliskan doa dan ucapan terbaik untuk kami</p>

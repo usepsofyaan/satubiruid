@@ -34,11 +34,11 @@ export default function HeroSection() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-pink-50">
       <div className="text-center">
-        <h1 className="font-playfair text-4xl font-bold text-[#5e81a2] mb-2">Walimatul &#39;Urs</h1>
+        <h1 className="font-playfair text-4xl font-bold text-[#5e81a2] mb-2">Ngunduh Mantu</h1>
 
-        <h1 className="font-playfair text-3xl text-[#5e81a2] mb-4">Yunisa & Usep</h1>
+        <h1 className="font-playfair text-3xl text-[#5e81a2] mb-4">Usep & Yunisa</h1>
 
-        <p className="font-poppins text-gray-600">Ahad, 21 Desember 2025 (1 Rajab 1447 H)</p>
+        <p className="font-poppins text-gray-600">Ahad, 4 Januari 2026 (14 Rajab 1447 H)</p>
 
         <p className="font-poppins text-gray-600 mt-4">Kepada Yth</p>
 

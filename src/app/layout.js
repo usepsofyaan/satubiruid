@@ -24,8 +24,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Walimatul Urs Y & U",
-  description: "Walimatul Urs Yunisa & Usep",
+  title: "Ngunduh Mantu U & Y",
+  description: "Ngunduh Mantu Usep & Yunisa",
 };
 
 export default function RootLayout({ children }) {
